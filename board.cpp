@@ -59,7 +59,7 @@ int ConnectFour::getCurrentTurn() {
 }
 
 bool ConnectFour::PlaceChecker(int columnIndex) {
-    if(columnIndex >= board[0].size() || columnIndex < 0) return false;
+    if(columnIndex >= board[0].size() || columnIndex < 0 || board[0][columnIndex] != ' ') return false;
     
     char checkerPiece = getCurrentTurn() ? 'X' : 'O';
     for (int rowIndex = board.size() - 1; rowIndex >= 0; --rowIndex) {

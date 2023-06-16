@@ -23,16 +23,26 @@ int main() {
     ConnectFour game;
     clearScreen();
     game.printBoard();
+
     while(game.getGameState() == -1) {
-     cout << "Enter drop location:";
-     int input;
-     cin >> input;
-     game.PlaceChecker(input-1);
-     if(game.checkWin() != -1) break;
-     game.changePlayerTurn();
-     clearScreen();
-     game.printBoard();
+        int input;
+        bool validMove;
+        do {
+            cout << "Enter drop location:";
+            cin >> input;
+            validMove = game.PlaceChecker(input-1);
+            if(!validMove) {
+                cout << "Invalid move, please try again." << endl;
+            }
+        } while (!validMove);
+ 
+        if(game.checkWin() != -1) break;
+
+        game.changePlayerTurn();
+        clearScreen();
+        game.printBoard();
     }
+    
     clearScreen();
     game.printBoard();
     cout << ANSI_COLOR_YELLOW << game.getGameState() << " wins!\n" << ANSI_COLOR_RESET; 

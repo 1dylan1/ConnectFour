@@ -1,5 +1,7 @@
 # Connect Four Game in C++
 
+![](https://i.imgur.com/TgD0cEX.png)
+
 This is a console-based version of the classic game Connect Four. The game is implemented in C++ and can be played on a terminal.
 
 ## Description

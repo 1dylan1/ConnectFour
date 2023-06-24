@@ -9,7 +9,7 @@ using namespace std;
 #define ANSI_COLOR_RESET   "\x1b[0m"
 
 
-enum GameState {NoWin = -1, Player1Win = 1, Player2Win = 2};
+enum GameState {NoWin = -1, Player1Win = 1, Player2Win = 2, Draw = 3};
 
 ConnectFour::ConnectFour() {
     board = createBoard();
@@ -100,6 +100,16 @@ int ConnectFour::checkWin() {
             }
         }
     }
-    return NoWin;  // no win found
+
+    // Check if the board is full
+    for (int i = 0; i < board.size(); i++) {
+        for (int j = 0; j < board[i].size(); j++) {
+            if (board[i][j] == ' ') {
+                return NoWin;
+            }
+        }
+    }
+
+    return Draw;
 }
 

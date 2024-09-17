@@ -47,6 +47,3 @@ To run the game, use the following command:
 The game starts with an empty board. Player 1's pieces are denoted by 'X' (red), and Player 2's pieces are denoted by 'O' (blue). The current player is prompted to input the column number where they want to place their piece.
 
 The game continues until one player gets four of their pieces in a line or the board is filled (a draw).
-
-## Suggestions / Bugs / Comments
-If you need to contact me for anything pertaining to this repository, you may do so at `asdjaksldjawdjwla@outlook.com`, please make sure your subject contains 'ConnectFour' so I know that it pertains to this repo before opening.
